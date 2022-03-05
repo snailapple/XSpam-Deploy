@@ -9,7 +9,7 @@ RIZOELX_() {
     $(_python_ 'from git import Repo
 import sys
 
-UPSTR = "https://github.com/MrRizoel/XSpam"
+UPSTR = "https://github.com/MrRizoel/RiZoeLXSpam"
 _BRANCH_ = "main"
 
 repo = Repo.init()
@@ -21,12 +21,12 @@ repo.heads[_BRANCH_].checkout(True) ')
 
 _riz_repo () {
     local rixrepo
-    rixrepo=`echo "aHR0cHM6Ly9naXRodWIuY29tL01yUml6b2VsL1hTcGFt" | base64 -d`
+    rixrepo=`echo "aHR0cHM6Ly9naXRodWIuY29tL01yUml6b2VsL1JpWm9lTFhTcGFt" | base64 -d`
     echo "$rlink"
 }
 
 _riz_zip () {
-    echo "aHR0cHM6Ly9naXRodWIuY29tL01yUml6b2VsL1hTcGFtL2FyY2hpdmUvbWFpbi56aXA=" | base64 -d
+    echo "aHR0cHM6Ly9naXRodWIuY29tL01yUml6b2VsL1JpWm9lTFhTcGFtL2FyY2hpdmUvbWFpbi56aXA=" | base64 -d
 }
 
 RIZOELX_PLUG() {
