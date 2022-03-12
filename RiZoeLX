@@ -5,19 +5,7 @@ _python_() {
     python3${pVer%.*} -c "$1"
 }
 
-RIZOELX_() {
-    $(_python_ 'from git import Repo
-import sys
 
-UPSTR = "https://github.com/MrRizoel/RiZoeLXSpam"
-_BRANCH_ = "main"
-
-repo = Repo.init()
-origin = repo.create_remote("temponame", UPSTR)
-origin.fetch()
-repo.create_head(_BRANCH_, origin.refs[_BRANCH_])
-repo.heads[_BRANCH_].checkout(True) ')
-}
 
 _riz_repo () {
     local rixrepo
@@ -27,19 +15,6 @@ _riz_repo () {
 
 _riz_zip () {
     echo "aHR0cHM6Ly9naXRodWIuY29tL01yUml6b2VsL1JpWm9lTFhTcGFtL2FyY2hpdmUvbWFpbi56aXA=" | base64 -d
-}
-
-RIZOELX_PLUG() {
-    local rixrepo=$(_riz_repo)
-    $(_python_ 'from git import Repo
-import sys
-UPSTR = "'$rixrepo'"
-_BRANCH_ = "master"
-repo = Repo.init()
-origin = repo.create_remote("temponame", UPSTR)
-origin.fetch()
-repo.create_head(_BRANCH_, origin.refs[_BRANCH_])
-repo.heads[_BRANCH_].checkout(True) ')
 }
 
 _starter () {
